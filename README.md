@@ -60,6 +60,7 @@ sudo ./setup_network.sh
 python3 neurochat.py
 
 📁 File Structure
+
 neurochat/
 ├── prepare_model.py      # Downloads & splits DistilGPT-2 into 3 layers
 ├── setup_network.sh      # Creates virtual network topology
@@ -78,13 +79,12 @@ Distributed Inference: Each layer processes and forwards hidden states
 Response Generation: Final output generates conversational text
 
 📊 Performance
-  
-Metric	                Value
-Network Hops	          3 (Layer1→Layer2→Layer3)
-Simulated Latency	      ~6ms total (2ms per hop)
-Model Size	            66M parameters (DistilGPT-2)
-Actual Throughput       ~1 req/sec (CPU, prototype)
-
+Table
+Metric	Value
+Network Hops	3 (Layer1→Layer2→Layer3)
+Simulated Latency	~6ms total (2ms per hop)
+Model Size	66M parameters (DistilGPT-2)
+Actual Throughput	~1 req/sec (CPU, prototype)
 Note: This is a research prototype demonstrating distributed architecture, not optimized for speed. Production systems would use GPU acceleration, RDMA, and tensor parallelism.
 
 🎓 Educational Value
@@ -94,6 +94,7 @@ Network Topology as Architecture: Physical layout = computational graph
 Message Passing as Synaptic Transmission: ZeroMQ = neural spikes
 Fault Tolerance: Network can route around failed nodes
 Edge AI: Intelligence distributed to network edges
+
 🔮 Future Improvements
 [ ] GPU acceleration (CUDA)
 [ ] Tensor parallelism (vs current pipeline)
@@ -102,8 +103,10 @@ Edge AI: Intelligence distributed to network edges
 [ ] In-network computation (P4 switches)
 [ ] Fault tolerance with redundant paths
 [ ] Dynamic routing based on load
+
 📝 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
 🙏 Acknowledgments
 Hugging Face Transformers (DistilGPT-2)
 ZeroMQ for messaging
